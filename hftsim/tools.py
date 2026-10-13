@@ -127,6 +127,9 @@ def latency_main():
     payload=json.loads(Path(args.config).read_text())
     frame,events,meta=(geometry_latency if args.mode=='geometry' else engineering_latency)(payload)
     save_result(args.out,frame,events,meta)
-    comparison_plot({payload.get('name','Custom'):frame},Path(args.out)/'latency.png')
-    jitter_boxplot({payload.get('name','Custom'):frame},Path(args.out)/'jitter.png')
+    # Keep the exported plots readable on installations without CJK fonts.
+    _,shells,_=parse_config(payload)
+    plot_label=f'{args.mode}: {sum(c.count for c in shells)} satellites'
+    comparison_plot({plot_label:frame},Path(args.out)/'latency.png')
+    jitter_boxplot({plot_label:frame},Path(args.out)/'jitter.png')
     print((Path(args.out)/'summary.json').read_text())

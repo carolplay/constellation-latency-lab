@@ -95,6 +95,8 @@ node tests/browser-model.mjs
 
 当前 Cesium 足印采用逐星 WGS84 边界求根与动态 Entity 绘制；较多卫星时可能卡顿。性能改造作为下一项工作，当前版本没有宣称72星已经流畅。可以先关闭足印/锥体，只显示轨迹。
 
+发布后已记录 [72星渲染基线与建议](docs/performance.md)，没有修改模型或开始新一轮星座扫描。
+
 ## 许可
 
 MIT。CesiumJS 使用 Apache-2.0；保留其可见署名。见 [NOTICE.md](NOTICE.md)。本仓库不含账户凭据、Site托管身份、用户粘贴原文或本机环境。

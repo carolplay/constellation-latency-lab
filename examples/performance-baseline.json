@@ -1,0 +1,39 @@
+{
+  "publicHomepageStatus": 200,
+  "unauthenticatedContext": true,
+  "viewport": "390x844",
+  "satellites": 72,
+  "renderer": "Headless Chromium with SwiftShader; software-rendered baseline, not measured phone FPS",
+  "results": [
+    {
+      "name": "full",
+      "footprints": true,
+      "paths": true,
+      "meanUpdateMs": 7.645000004768372,
+      "meanAnimationFrameMs": 449.9857142857144,
+      "observedFps": 2.2222927711990854,
+      "p99FrameMs": 483.2999999999993,
+      "frames": 7
+    },
+    {
+      "name": "no_footprints",
+      "footprints": false,
+      "paths": true,
+      "meanUpdateMs": 0.3350000023841858,
+      "meanAnimationFrameMs": 113.76086956521739,
+      "observedFps": 8.79036881330021,
+      "p99FrameMs": 166.60000000000036,
+      "frames": 23
+    },
+    {
+      "name": "points_only",
+      "footprints": false,
+      "paths": false,
+      "meanUpdateMs": 0.3099999904632568,
+      "meanAnimationFrameMs": 128.32999999999993,
+      "observedFps": 7.792410192472536,
+      "p99FrameMs": 150,
+      "frames": 20
+    }
+  ]
+}
