@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "simulation": {
+    "route": "LD4-TOKYO",
+    "duration_s": 86400,
+    "step_s": 60,
+    "epoch": "2026-10-12T00:00:00Z"
+  },
+  "physics": {
+    "min_elevation_deg": 20,
+    "atmosphere_km": 80,
+    "max_isl_range_km": 6000,
+    "satellite_processing_us": 5,
+    "ground_modem_ms": 0.5
+  },
+  "topology": "grid",
+  "name": "36星 · 倾角调整 6×6 / 55°",
+  "shells": [
+    {
+      "pattern": "delta",
+      "planes": 6,
+      "sats_per_plane": 6,
+      "altitude_km": 1180,
+      "inclination_deg": 55,
+      "walker_f": 1,
+      "raan_start_deg": 0,
+      "phase_deg": 0,
+      "j2": true
+    }
+  ]
+}

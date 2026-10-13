@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>星座动态覆盖对比</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cesium@1.146.0/Build/Cesium/Widgets/widgets.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="shared/forms.css">
+<script>window.CESIUM_BASE_URL='https://cdn.jsdelivr.net/npm/cesium@1.146.0/Build/Cesium/';</script>
+<script src="https://cdn.jsdelivr.net/npm/cesium@1.146.0/Build/Cesium/Cesium.js"></script>
+</head>
+<body>
+<header>
+  <div><strong>星座动态覆盖对比</strong><span id="configuration">71.5° · 18/3/1 · 1180 km · 最低仰角 20°</span></div>
+  <nav aria-label="视图控制">
+    <a href="./" style="color:#b8d8f0">工具首页</a><button id="new-constellation">新建星座</button>
+    <label id="scenario-control" hidden>方案<select id="scenario" aria-label="选择星座方案"></select></label>
+    <button id="route-view">伦敦—东京</button><button id="global-view">全局视角</button>
+    <label><input type="checkbox" id="footprints" checked><span id="footprint-label">20° 足印</span></label>
+    <label><input type="checkbox" id="cones">近似锥体</label>
+    <label class="file-button">载入星历<input id="file" type="file" accept=".czml,.json"></label>
+  </nav>
+</header>
+<main id="globe" aria-label="可旋转、可拖动时间轴的三维地球"></main>
+<aside>
+  <div class="stats"><span id="LD4">LD4 —</span><span id="NY4">NY4 —</span><span id="TOKYO">东京 —</span><span id="corridor">航线覆盖 —</span></div>
+  <div id="status" role="status" aria-live="polite">正在载入 24 小时轨迹…</div>
+  <div id="study-summary" class="study-summary" hidden></div>
+  <div class="legend"><span><i class="green"></i>有可见卫星</span><span><i class="red"></i>覆盖缺口</span><span>航线 97 个采样点；足印按 WGS84 椭球法向求解</span></div>
+  <small>足印表示仰角几何接入范围，不是实际天线波束；绿色不代表端到端激光网络连通。锥体采用球面近似。东京为城市代理坐标。</small>
+</aside>
+<dialog id="custom-dialog">
+  <h2>加入新星座</h2><p class="muted">输入单层或多层轨道参数。覆盖仅判断仰角几何，未考虑机械和光学误差。新方案保存在本机，可导出配置供网络时延工具使用。</p>
+  <div id="custom-editor"></div><div class="actions"><button id="add-custom">生成并加入</button><button id="export-config">下载配置</button><button id="export-czml" disabled>下载 CZML</button><label class="import-label">导入配置<input id="import-config" type="file" accept=".json"></label><button id="close-custom">关闭</button></div>
+  <p id="custom-notice" role="status"></p>
+</dialog>
+<script src="viewer.js"></script>
+<script type="module" src="custom.js"></script>
+</body>
+</html>

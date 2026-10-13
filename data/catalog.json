@@ -1,0 +1,52 @@
+[
+  {
+    "id": "baseline18",
+    "label": "18星 · 基线 3×6 / 71.5°",
+    "url": "./data/configs/baseline18.json"
+  },
+  {
+    "id": "inplane36",
+    "label": "36星 · 增加同面卫星 3×12",
+    "url": "./data/configs/inplane36.json"
+  },
+  {
+    "id": "planes36",
+    "label": "36星 · 增加轨道面 6×6",
+    "url": "./data/configs/planes36.json"
+  },
+  {
+    "id": "tilt36",
+    "label": "36星 · 倾角调整 6×6 / 55°",
+    "url": "./data/configs/tilt36.json"
+  },
+  {
+    "id": "both72",
+    "label": "72星 · 同时加密 6×12 / 71.5°",
+    "url": "./data/configs/both72.json"
+  },
+  {
+    "id": "balanced72",
+    "label": "72星 · 调整布局 9×8 / 55°",
+    "url": "./data/configs/balanced72.json"
+  },
+  {
+    "id": "candidate72",
+    "label": "72星 · 倾角相位候选 6×12 / 50°",
+    "url": "./data/configs/candidate72.json"
+  },
+  {
+    "id": "globalstar48",
+    "label": "48星 · Globalstar 历史布局 / 20°",
+    "url": "./data/configs/globalstar48.json"
+  },
+  {
+    "id": "globalstar48low",
+    "label": "48星 · Globalstar / 10° 仰角对照",
+    "url": "./data/configs/globalstar48low.json"
+  },
+  {
+    "id": "lightspeed298",
+    "label": "298星 · Lightspeed 2020 双层方案",
+    "url": "./data/configs/lightspeed298.json"
+  }
+]

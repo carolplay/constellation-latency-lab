@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.egg-info/
+.ipynb_checkpoints/
+.mplconfig/
+node_modules/
+build/
+dist/
+outputs/
+.DS_Store
+.env
+.env.*
+*.tar.gz

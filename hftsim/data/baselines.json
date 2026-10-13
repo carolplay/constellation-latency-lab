@@ -1,0 +1,13 @@
+{
+  "retrieved_date": "2026-10-12",
+  "routes": {
+    "NY4-LD4": {"stations": ["NY4", "LD4"], "rtt_ms": 58.9, "status": "user_assumption", "label": "User GTT/Express reference", "notes": "58.9 ms exact facility SLA not independently verified. Current operator EXA publishes sub-60 ms NY-London and 60.0 ms Slough-Secaucus; neither is an instrumented trace.", "source": "https://www.exainfra.net/sector/financial-markets"},
+    "LD4-TOKYO": {"stations": ["LD4", "TOKYO"], "rtt_ms": 155.0, "status": "user_assumption", "label": "User Europe-Asia reference", "notes": "Provider, path, timestamp, endpoint and measurement protocol unresolved.", "source": null},
+    "AURORA-NY4": {"stations": ["AURORA", "NY4"], "rtt_ms": 7.97, "status": "user_assumption", "label": "User microwave reference (not fiber)", "notes": "Exact McKay value and RTT/OWTT convention unverified; microwave uses near-vacuum propagation, not a fiber index penalty.", "source": "https://mckay-brothers.com/"}
+  },
+  "cable_catalog": [
+    {"name": "EXA Express", "published_latency_ms": 60.0, "latency_type": "RTT", "endpoints": "Slough-Secaucus (operator city-level service)", "status": "operator_published_not_measured_SLA", "source": "https://www.exainfra.net/sector/financial-markets"},
+    {"name": "Amitie", "system_length_km": 6800, "published_latency_ms": 34, "latency_type": "unspecified", "endpoints": "Bordeaux-New York", "status": "operator_published_ambiguous_direction", "notes": "Total branched system length is not an endpoint route length. No automatic conversion to RTT; no LD4-NY4 mapping.", "source": "https://www.orange.com/en/press-release/orange-announces-the-launch-of-the-amitie-subsea-cable-offering-a-unique-and-robust-transatlantic-solution-with-ultra-low-latency-233780"},
+    {"name": "FASTER", "system_length_km": 9000, "published_latency_ms": null, "latency_type": "not_published", "endpoints": "Oregon-Chiba/Mie", "status": "verified_system_length_only", "notes": "No fabricated measured RTT or SLA; total system length may include branches.", "source": "https://www.nec.com/en/global/prod/nw/submarine/news/20160629.html"}
+  ]
+}

@@ -1,0 +1,11 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>网络时延模拟 · Constellation Latency Lab</title><link rel="stylesheet" href="lab.css"><link rel="stylesheet" href="shared/forms.css"></head><body><main class="page">
+<nav class="top"><a href="./">← 工具首页</a><a href="coverage.html">动态覆盖图</a><a href="https://github.com/carolplay/constellation-latency-lab">GitHub ↗</a></nav>
+<h1 style="font-size:36px">网络时延模拟</h1><p>网页计算几何快照图：80 km 大气边界、链路距离与传播/处理开销。没有机械/光学跟踪、捕获与切星等待；这些约束在 Python 工程入口中保留。</p>
+<div class="two-col"><section class="panel"><label>从示例开始 <select id="latency-preset"></select></label><div id="latency-editor"></div><div class="actions"><button id="run-latency">计算几何时延</button><button id="stop-latency" disabled>停止</button><button id="download-latency-config">下载配置</button><label class="import-label">导入配置<input id="latency-config-file" type="file" accept=".json"></label></div><p id="progress" role="status">尚未运行。可直接使用从覆盖工具下载的配置。</p></section>
+<section><div class="panel"><h2>结果</h2><div class="kpis"><div><span>采样接通率</span><strong id="availability">—</strong></div><div><span>在线平均 RTT</span><strong id="mean">—</strong></div><div><span>在线 P99 RTT</span><strong id="p99">—</strong></div><div><span>在线 P99−P1</span><strong id="jitter">—</strong></div></div><p id="outage" class="muted">中断保留为缺失时延，不计作 0 ms。</p><canvas id="latency-chart" aria-label="RTT随时间变化，中断显示为曲线空隙"></canvas><label class="muted">查看快照<input id="sample-index" type="range" min="0" max="0" value="0" disabled></label><div id="sample-detail" class="inspect"></div><div class="actions"><button id="download-csv" disabled>下载 CSV</button><button id="download-result" disabled>下载结果 JSON</button></div></div>
+<div class="panel"><h2>工程模式（Python）</h2><p class="muted">使用相同配置文件，计入现有 FOV、转速、多普勒、星间捕获与一/双天线状态机。参数是假设，仍不包含真实光链路预算、天气、排队或因果包级路由。</p><pre>python3 -m venv .venv
+source .venv/bin/activate
+pip install -e .
+constellation-latency --config constellation.config.json \
+  --mode engineering --out outputs/my-network</pre><a href="https://github.com/carolplay/constellation-latency-lab">获取 Python 源码与说明 →</a></div></section></div>
+<footer>在线分位数与全天接通率分别报告。RTT＝2×同一时刻对称 OWTT；P99−P1 是时延跨度，不是包间抖动。对标 RTT 为情景数值。</footer></main><script type="module" src="latency.js"></script></body></html>

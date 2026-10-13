@@ -1,0 +1,1 @@
+{"name":"constellation-latency-lab-browser","private":true,"type":"module","scripts":{"test":"node tests/browser-model.mjs"}}

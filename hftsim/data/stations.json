@@ -1,0 +1,6 @@
+{
+  "LD4": {"lat_deg": 51.5238, "lon_deg": -0.6374, "height_km": 0.025, "label": "LD4 Slough vicinity", "coordinate_status": "approximate facility vicinity; survey required", "source": "https://www.equinix.com/data-centers/europe-colocation/united-kingdom-colocation/london-data-centers"},
+  "NY4": {"lat_deg": 40.7890, "lon_deg": -74.0700, "height_km": 0.005, "label": "NY4 Secaucus vicinity", "coordinate_status": "approximate facility vicinity; survey required", "source": "https://www.equinix.com/data-centers/americas-colocation/united-states-colocation/new-york-data-centers/ny4"},
+  "TOKYO": {"lat_deg": 35.6762, "lon_deg": 139.6503, "height_km": 0.020, "label": "Tokyo city proxy (CC2 unverified)", "coordinate_status": "city proxy, not verified CC2 location", "source": "user route specification; exact facility unresolved"},
+  "AURORA": {"lat_deg": 41.8024, "lon_deg": -88.2425, "height_km": 0.200, "label": "Aurora CME vicinity", "coordinate_status": "approximate vicinity; survey required", "source": "user route specification"}
+}

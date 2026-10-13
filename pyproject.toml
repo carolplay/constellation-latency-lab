@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hft-space-latency"
+version = "0.1.0"
+description = "Auditable snapshot time-varying graph space/fiber latency sandbox"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.25", "pandas>=2.0", "networkx>=3.2", "matplotlib>=3.8"]
+
+[project.optional-dependencies]
+notebook = ["nbformat>=5.9", "nbclient>=0.9", "ipykernel>=6", "ipywidgets>=8", "jupyterlab>=4"]
+tle = ["skyfield>=1.49"]
+public_models = ["scipy>=1.11"]
+
+[project.scripts]
+hft-sim = "hftsim.cli:main"
+constellation-cover = "hftsim.tools:coverage_main"
+constellation-latency = "hftsim.tools:latency_main"
+
+[tool.setuptools.packages.find]
+include = ["hftsim*"]
+
+[tool.setuptools.package-data]
+hftsim = ["data/*.json"]
